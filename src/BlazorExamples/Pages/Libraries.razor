@@ -1,0 +1,80 @@
+﻿@page "/libraries"
+
+<PageTitle>Libraries</PageTitle>
+
+<MudText Typo="Typo.h2">Libraries to use with Blazor</MudText>
+
+<MudGrid>
+    <MudItem xs="12">
+<MudGrid Spacing="3" Justify="Justify.Center">
+
+    <MudItem xs="12" md="6" lg="4">
+        <MudCard>
+            <MudCardHeader Class="mud-theme-primary">
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h4">MudBlazor</MudText>
+                    <MudText Typo="Typo.h6">Material Design for Blazor</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+
+            <MudCardContent>
+                <MudText Color="@Color.Dark">Layouts and components based on Material design.</MudText>
+            </MudCardContent>
+
+            <MudCardActions>
+                <MudButton StartIcon="@Icons.Material.Filled.Send" Link="https://mudblazor.com" Target="_blank" Color="Color.Secondary">
+                    <MudText>https://mudblazor.com</MudText>
+                </MudButton>
+
+                <MudButton StartIcon="@Icons.Custom.Brands.GitHub" Link="https://github.com/MudBlazor/MudBlazor" Target="_blank" Color="Color.Secondary">
+                    <MudText>Github</MudText>
+                </MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+    <MudItem xs="12" md="6" lg="4">
+        <MudCard>
+            <MudCardHeader Class="mud-theme-primary">
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h4">MudBlazor.Markdown</MudText>
+                    <MudText Typo="Typo.h6">Markdown Component for MudBlazor</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+
+            <MudCardContent>
+                <MudText Color="@Color.Dark">Allows the rendering of Markdown content within Blazor components.</MudText>
+            </MudCardContent>
+
+            <MudCardActions>
+                <MudButton StartIcon="@Icons.Custom.Brands.GitHub" Link="https://github.com/MyNihongo/MudBlazor.Markdown" Target="_blank" Color="Color.Secondary">
+                    <MudText>Github</MudText>
+                </MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+    <MudItem xs="12" md="6" lg="4">
+        <MudCard>
+            <MudCardHeader Class="mud-theme-primary">
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h4">Fluxor</MudText>
+                    <MudText Typo="Typo.h6">Flux/Redux Statemanagement</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+
+            <MudCardContent>
+                <MudText Color="@Color.Dark">Fluxor is a zero boilerplate Flux/Redux library for .NET.</MudText>
+            </MudCardContent>
+
+            <MudCardActions>
+                <MudButton StartIcon="@Icons.Custom.Brands.GitHub" Link=" https://github.com/mrpmorris/Fluxor" Target="_blank" Color="Color.Secondary">
+                    <MudText>Github</MudText>
+                </MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+   
+</MudGrid>
+</MudItem>
+</MudGrid>
