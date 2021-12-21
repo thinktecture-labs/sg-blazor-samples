@@ -1,6 +1,7 @@
 using BlazorExamples;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.JSInterop;
 using MudBlazor.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -10,7 +11,11 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddMudServices();
 builder.Services.AddScoped(sp => new HttpClient() { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress), });
 
-// Wait and display loading screen for a bit...
-await Task.Delay(TimeSpan.FromSeconds(5));
+var host = builder.Build();
 
-await builder.Build().RunAsync();
+// tell JS to display the wait-text and wait a bit
+var jsRuntime = host.Services.GetRequiredService<IJSRuntime>();
+await jsRuntime.InvokeVoidAsync("window.waitForStartup");
+await Task.Delay(TimeSpan.FromSeconds(3));
+
+await host.RunAsync();

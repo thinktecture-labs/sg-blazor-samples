@@ -73,8 +73,9 @@
                     <p>
                         This application shows some examples how to create Blazor Webassembly (WASM) applications.
                     </p>
-                    <p>
-                        Loading time is delayed by 5 seconds on purpose to show how to display a loading screen like this.
+                    <p id="waittext" style="visibility: hidden;">
+                        Blazor host application was successfully created. Time to application startup is artifically
+                        delayed by a few seconds on purpose to show how to display a loading screen like this.
                     </p>
                     <a href="https://thinktecture.com" target="__new">
                         <div class="mdc-button mdc-card__actions">
@@ -86,6 +87,9 @@
             <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
             <script>
                 const linearProgress = new mdc.linearProgress.MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+                window.waitForStartup = function () {
+                    document.querySelector("#waittext").style.visibility = "visible";
+                };
             </script>
         </div>
     </div>
