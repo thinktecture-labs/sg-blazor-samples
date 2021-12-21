@@ -10,4 +10,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddMudServices();
 builder.Services.AddScoped(sp => new HttpClient() { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress), });
 
+// Wait and display loading screen for a bit...
+await Task.Delay(TimeSpan.FromSeconds(5));
+
 await builder.Build().RunAsync();

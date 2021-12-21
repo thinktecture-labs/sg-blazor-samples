@@ -8,6 +8,7 @@
     <base href="/" />
     <link href="css/app.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
     <link href="manifest.json" rel="manifest" />
 </head>
@@ -15,7 +16,78 @@
 <body>
     <div id="app">
         <!-- Will be replaced by App.razor when loaded -->
-        Loading...
+        <style>
+            /* workaround for bug in mudblazor, that globally resets all margins and paddings */
+            #blazor-loading-screen h1,
+            #blazor-loading-screen h2,
+            #blazor-loading-screen p
+            {
+                margin-block-start: 0.67em;
+                margin-block-end: 0.67em;
+                padding-left: 8px;
+            }
+
+            .cards {
+                margin-top: 10em;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .loading-card {
+                width: 30em;
+                margin: 16px;
+                --mdc-theme-primary: #ff584f;
+                --mdc-theme-secondary: #3d6fb4;
+                --mdc-theme-on-primary: var(--mdc-theme-text-primary-on-dark);
+            }
+
+                .loading-card > .mdc-card__media {
+                    height: 9em;
+                }
+        </style>
+        <div id="blazor-loading-screen" class="mdc-typography">
+            <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet" />
+
+            <h1>Blazor Examples</h1>
+
+            <div class="cards">
+
+                <div class="mdc-card loading-card">
+                    <div class="mdc-card__media mdc-theme--primary-bg mdc-theme--on-primary">
+                        <div class="mdc-card__media-content">
+                            <h1 class="mdc-typography--headline4">Loading BlazorExamples</h1>
+                            <h2 class="mdc-typography--headline6">The application is currently loading...</h2>
+                        </div>
+                    </div>
+                    <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate mdc-theme--secondary-bg">
+                        <div class="mdc-linear-progress__buffering-dots"></div>
+                        <div class="mdc-linear-progress__buffer"></div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar ">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                    </div>
+                    <p>
+                        This application shows some examples how to create Blazor Webassembly (WASM) applications.
+                    </p>
+                    <p>
+                        Loading time is delayed by 5 seconds on purpose to show how to display a loading screen like this.
+                    </p>
+                    <a href="https://thinktecture.com" target="__new">
+                        <div class="mdc-button mdc-card__actions">
+                            Made with &nbsp;<i class="material-icons mdc-button__icon">favorite</i>@ Thinktecture
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+            <script>
+                const linearProgress = new mdc.linearProgress.MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+            </script>
+        </div>
     </div>
 
     <div id="blazor-error-ui">
