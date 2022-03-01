@@ -1,21 +1,24 @@
 ﻿@inherits LayoutComponentBase
-
+<MudThemeProvider Theme="_themeManager.Theme"/>
 <MudLayout>
 
-    <MudAppBar Color="Color.Primary">
+    <MudAppBar>
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => ToggleMenu())" />
         <MudText Typo="Typo.h5">Blazor Examples</MudText>
 
         <MudSpacer />
 
         <a href="https://github.com/thinktecture-labs/sg-blazor-samples/" target="__new">
-            <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" />
+            <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Default" />
         </a>
+        <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Inherit" OnClick="ToggleThemeManager" />
     </MudAppBar>
 
     <MudDrawer Open="_menuExpanded" ClipMode="DrawerClipMode.Docked">
         <Menu />
     </MudDrawer>
+    
+    <MudThemeManager Open="_themeManagerExpanded" OpenChanged="ToggleThemeManager" Theme="_themeManager" ThemeChanged="UpdateTheme" />
 
     <MudMainContent>
         <MudContainer Class="mt-16">
