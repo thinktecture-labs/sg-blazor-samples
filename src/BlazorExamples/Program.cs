@@ -1,4 +1,5 @@
 using BlazorExamples;
+using BlazorExamples.Features.PokeApi.Services;
 using Fluxor;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -16,6 +17,11 @@ builder.Services.AddFluxor(o =>
 	{
 		ro.Name = "SG Blazor Samples";
 	});
+});
+
+builder.Services.AddHttpClient<PokemonApiHttpClient>(client =>
+{
+	client.BaseAddress = new Uri("https://pokeapi.co/api/v2/");
 });
 
 builder.Services.AddMudServices();
