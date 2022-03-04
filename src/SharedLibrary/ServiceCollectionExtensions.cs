@@ -1,5 +1,4 @@
-﻿
-using Fluxor;
+﻿using Fluxor;
 using Microsoft.Extensions.DependencyInjection;
 using MudBlazor.Services;
 using SharedLibrary.Features.PokeApi.Services;
