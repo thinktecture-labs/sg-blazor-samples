@@ -1,0 +1,6 @@
+﻿@inherits DynamicComponentBase
+
+<MudText Typo="Typo.body1" Color="Color.Error">Unknown Component</MudText>
+<MudText Typo="Typo.body2">@Component.Type : @Component.Label</MudText>
+
+<DynamicComponents Components="@Component.ChildComponents" />

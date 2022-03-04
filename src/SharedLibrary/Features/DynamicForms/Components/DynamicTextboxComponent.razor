@@ -1,0 +1,3 @@
+﻿@inherits DynamicComponentBase
+<MudTextField T="string" Label="@Component.Label" @bind-value="@StringValue"></MudTextField>
+<DynamicComponents Components="@Component.ChildComponents" />

@@ -1,0 +1,9 @@
+﻿@if (Form != null)
+{
+    <MudText Typo="Typo.h4">Form: @Form.Label</MudText>
+    <DynamicComponents Components="@Form.ChildComponents" />
+}
+else
+{
+    <MudText Typo="Typo.body1" Color="Color.Warning">No form found</MudText>
+}

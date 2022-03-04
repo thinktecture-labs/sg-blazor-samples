@@ -1,0 +1,5 @@
+﻿@using SharedLibrary.Features.DynamicForms.Models
+@foreach (var control in Components)
+{
+    <DynamicComponent Type="@control.GetComponentType()" Parameters="@control.GetParameters()" />
+}
