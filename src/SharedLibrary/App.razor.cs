@@ -1,19 +1,14 @@
-﻿using System.Reflection;
-using Fluxor;
+﻿using Fluxor;
 using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Configuration;
 using SharedLibrary.Features.PokeApi.State;
 
-namespace BlazorWasmHost
+namespace SharedLibrary
 {
 	public partial class App
 	{
 		[Inject] private IDispatcher _dispatcher { get; set; }
 		[Inject] private IConfiguration _configuration { get; set; }
-
-		private Assembly[] AdditionalAssemblies = new Assembly[]
-		{
-			typeof(PokeApiState).Assembly,
-		};
 
 		protected override void OnAfterRender(bool firstRender)
 		{

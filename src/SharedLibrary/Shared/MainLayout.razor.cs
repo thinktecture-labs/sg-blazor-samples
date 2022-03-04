@@ -2,7 +2,7 @@
 using MudBlazor.ThemeManager;
 using MudBlazor.Utilities;
 
-namespace BlazorWasmHost.Shared
+namespace SharedLibrary.Shared
 {
 	public partial class MainLayout
 	{

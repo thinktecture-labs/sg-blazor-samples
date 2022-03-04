@@ -1,4 +1,4 @@
-﻿namespace BlazorExamples.Shared
+﻿namespace SharedLibrary.Shared
 {
 	public partial class Menu
 	{
