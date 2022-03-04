@@ -1,0 +1,33 @@
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+@if (IsInitialized)
+{
+    @if (State.Value.IsLoading)
+    {
+        <MudText Typo="Typo.h4">Loading Pokemon...</MudText>
+        if (State.Value.LoadingAmount > 0)
+        {
+            <MudProgressLinear Value="@State.Value.CurrentlyLoaded" Max="@State.Value.LoadingAmount"
+                               Color="Color.Secondary" Class="my-7" Size="Size.Medium">
+                <MudText Typo="Typo.subtitle1" Color="Color.Dark">
+                    <b>@State.Value.CurrentlyLoaded / @State.Value.LoadingAmount</b>
+                </MudText>
+            </MudProgressLinear>
+        }
+    }
+    else if (!State.Value.HasError)
+    {
+        <MudGrid Spaing="3" Justify="Justify.FlexStart">
+        @foreach (var pokemon in State.Value.AvailablePokemon)
+        {
+            <MudItem xs="3">
+                <PokemonCard Pokemon="pokemon"></PokemonCard>
+            </MudItem>
+        }
+        </MudGrid>
+    }
+    else
+    {
+        <MudText Typo="Typo.h4" Color="Color.Error">An error occurred: @State.Value.ErrorText</MudText>
+    }
+}
