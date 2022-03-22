@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using MudBlazor.Services;
 using SharedLibrary.Features.PokeApi.Services;
+using SharedLibrary.Features.Scopes.Services;
 
 namespace SharedLibrary
 {
@@ -9,6 +10,11 @@ namespace SharedLibrary
 	{
 		public static IServiceCollection AddSharedStuff(this IServiceCollection services)
 		{
+			services.AddSingleton<NumberProducer>();
+			services.AddSingleton<SingletonService>();
+			services.AddScoped<ScopedService>();
+			services.AddTransient<TransientService>();
+
 			services.AddFluxor(o =>
 			{
 				o.ScanAssemblies(typeof(PokemonApiHttpClient).Assembly);
