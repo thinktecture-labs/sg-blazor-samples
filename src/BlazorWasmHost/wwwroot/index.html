@@ -103,7 +103,17 @@
         <a class="dismiss">🗙</a>
     </div>
 
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_framework/blazor.webassembly.js" autostart="false"></script>
+    <script>
+        try {
+            Blazor.start()
+                .then(_ => console.info('Blazor started'))
+                .catch (error => console.error("Error starting blazor: " + error));
+        }
+        catch (error) {
+            console.error("Error booting up blazor application: " + error);
+        }
+    </script>
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
