@@ -1,0 +1,11 @@
+﻿@using SharedLibrary.Features.DeepLinking.Components
+@page "/deeplinking/{datasetid:guid}"
+
+<MudText Typo="Typo.h2">Deep Linking Example</MudText>
+
+<DeepLinkableComponent DataId="@DataSetId" />
+
+@code {
+    [Parameter]
+    public Guid DataSetId { get; set; }
+}
