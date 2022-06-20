@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
+using Microsoft.AspNetCore.Components.WebView.Maui;
 using SharedLibrary;
 
 namespace BlazorHybridHost
@@ -18,7 +18,9 @@ namespace BlazorHybridHost
             builder.Services.AddMauiBlazorWebView();
             builder.Services.AddSharedStuff();
 
-			return builder.Build();
-		}
+            builder.Services.AddSharedStuff();
+
+            return builder.Build();
+        }
 	}
 }
