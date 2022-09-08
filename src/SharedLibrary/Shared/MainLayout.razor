@@ -1,9 +1,9 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 <MudThemeProvider Theme="_themeManager.Theme"/>
 <MudLayout>
 
     <MudAppBar>
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => ToggleMenu())" />
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="ToggleMenu" />
         <MudText Typo="Typo.h5">Blazor Examples</MudText>
 
         <MudSpacer />
@@ -18,7 +18,7 @@
         <Menu />
     </MudDrawer>
     
-    <MudThemeManager Open="_themeManagerExpanded" OpenChanged="ToggleThemeManager" Theme="_themeManager" ThemeChanged="UpdateTheme" />
+    <MudThemeManager @bind-open="_themeManagerExpanded" Theme="_themeManager" ThemeChanged="UpdateTheme" />
 
     <MudMainContent>
         <MudContainer Class="mt-16">
