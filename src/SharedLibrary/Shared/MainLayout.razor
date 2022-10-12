@@ -14,7 +14,7 @@
         <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Inherit" OnClick="ToggleThemeManager" />
     </MudAppBar>
 
-    <MudDrawer Open="_menuExpanded" ClipMode="DrawerClipMode.Docked">
+    <MudDrawer @bind-Open="_menuExpanded" ClipMode="DrawerClipMode.Docked">
         <Menu />
     </MudDrawer>
     

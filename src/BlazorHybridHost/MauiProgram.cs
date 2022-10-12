@@ -9,15 +9,14 @@ namespace BlazorHybridHost
 		{
 			var builder = MauiApp.CreateBuilder();
 			builder
-				.RegisterBlazorMauiWebView()
 				.UseMauiApp<App>()
 				.ConfigureFonts(fonts =>
 				{
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				});
 
-			builder.Services.AddBlazorWebView();
-			builder.Services.AddSharedStuff();
+            builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddSharedStuff();
 
 			return builder.Build();
 		}
